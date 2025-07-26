@@ -8,3 +8,7 @@ arrays/basic-level/move-negative-to-front
 arrays/basic-level/reverse-array
 arrays/basic-level/sort-012-array
 arrays/basic-level/union-intersection-sorted-arrays
+
+arrays/medium-level/best-time-to-buy-and-sell-stock
+arrays/medium-level/common-eles-in-3-arrays
+arrays/medium-level/count-inversions
