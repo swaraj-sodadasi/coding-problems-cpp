@@ -19,3 +19,6 @@ arrays/medium-level/merge-intervals
 arrays/medium-level/merge-sorted-arrays
 arrays/medium-level/next-permutation
 arrays/medium-level/rearrange-pos-neg-eles
+
+arrays/advanced-level/count-smaller-on-right
+arrays/advanced-level/factorial-of-larger-number
