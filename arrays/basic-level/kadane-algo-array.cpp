@@ -2,7 +2,9 @@
 #include <vector>
 #include <algorithm> // For std::max
 
-int kadane(const std::vector<int>& nums) {
+using namespace std;
+
+int kadane(const vector<int>& nums) {
     if (nums.empty()) {
         // According to problem statement, contiguous subarray must contain at least one number.
         // If the array is empty, there are no subarrays, so this case should ideally not happen
@@ -33,29 +35,29 @@ int kadane(const std::vector<int>& nums) {
 
 int main() {
     int n;
-    std::cout << "Enter the number of elements in the array: ";
-    std::cin >> n;
+    cout << "Enter the number of elements in the array: ";
+    cin >> n;
 
     if (n <= 0) {
-        std::cout << "Array size must be positive to find a contiguous subarray." << std::endl;
+        cout << "Array size must be positive to find a contiguous subarray." << endl;
         return 0;
     }
 
-    std::vector<int> arr(n);
-    std::cout << "Enter " << n << " integers:" << std::endl;
+    vector<int> arr(n);
+    cout << "Enter " << n << " integers:" << endl;
     for (int i = 0; i < n; ++i) {
-        std::cin >> arr[i];
+        cin >> arr[i];
     }
 
-    std::cout << "Original Array: ";
+    cout << "Original Array: ";
     for (int x : arr) {
-        std::cout << x << " ";
+        cout << x << " ";
     }
-    std::cout << std::endl;
+    cout << endl;
 
     int max_subarray_sum = kadane(arr);
 
-    std::cout << "Maximum contiguous subarray sum: " << max_subarray_sum << std::endl;
+    cout << "Maximum contiguous subarray sum: " << max_subarray_sum << endl;
 
     return 0;
 }

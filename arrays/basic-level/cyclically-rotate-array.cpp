@@ -2,7 +2,9 @@
 #include <vector>
 #include <numeric> // For std::iota (optional, for easy array initialization)
 
-void cyclicallyRotateArray(std::vector<int>& arr) {
+using namespace std;
+
+void cyclicallyRotateArray(vector<int>& arr) {
     if (arr.empty()) {
         return; // No rotation needed for an empty array
     }
@@ -21,33 +23,33 @@ void cyclicallyRotateArray(std::vector<int>& arr) {
 int main() {
     // Dynamic input for array size
     int n;
-    std::cout << "Enter the number of elements in the array: ";
-    std::cin >> n;
+    cout << "Enter the number of elements in the array: ";
+    cin >> n;
 
     if (n <= 0) {
-        std::cout << "Array size must be positive." << std::endl;
+        cout << "Array size must be positive." << endl;
         return 0;
     }
 
-    std::vector<int> arr(n);
-    std::cout << "Enter " << n << " elements:" << std::endl;
+    vector<int> arr(n);
+    cout << "Enter " << n << " elements:" << std::endl;
     for (int i = 0; i < n; ++i) {
-        std::cin >> arr[i];
+        cin >> arr[i];
     }
 
-    std::cout << "Original Array: ";
+    cout << "Original Array: ";
     for (int x : arr) {
-        std::cout << x << " ";
+        cout << x << " ";
     }
-    std::cout << std::endl;
+    cout << endl;
 
     cyclicallyRotateArray(arr);
 
-    std::cout << "Array after cyclic rotation: ";
+    cout << "Array after cyclic rotation: ";
     for (int x : arr) {
-        std::cout << x << " ";
+        cout << x << " ";
     }
-    std::cout << std::endl;
+    cout << endl;
 
     return 0;
 }
