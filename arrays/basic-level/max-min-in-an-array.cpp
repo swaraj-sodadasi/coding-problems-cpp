@@ -3,15 +3,17 @@
 #include <algorithm> // For std::min and std::max
 #include <limits>    // For std::numeric_limits
 
+using namespace std;
+
 // Function to find the maximum and minimum elements in an array
 // Returns a std::pair where first is min and second is max
-std::pair<int, int> findMinMax(const std::vector<int>& arr) {
+pair<int, int> findMinMax(const vector<int>& arr) {
     if (arr.empty()) {
         // Return a sentinel value or throw an exception for an empty array.
         // Here, we'll return a pair of max/min possible values to indicate invalidity.
         // Or, if problem guarantees non-empty, this check can be removed.
-        std::cerr << "Error: Array is empty. Cannot find min/max." << std::endl;
-        return {std::numeric_limits<int>::max(), std::numeric_limits<int>::min()};
+        cerr << "Error: Array is empty. Cannot find min/max." << endl;
+        return {numeric_limits<int>::max(), std::numeric_limits<int>::min()};
     }
 
     int minVal = arr[0]; // Initialize min with the first element
@@ -35,35 +37,35 @@ std::pair<int, int> findMinMax(const std::vector<int>& arr) {
 
 int main() {
     int n;
-    std::cout << "Enter the number of elements in the array: ";
-    std::cin >> n;
+    cout << "Enter the number of elements in the array: ";
+    cin >> n;
 
     if (n <= 0) {
-        std::cout << "Array size must be positive to find min/max." << std::endl;
+        cout << "Array size must be positive to find min/max." << endl;
         return 0;
     }
 
-    std::vector<int> arr(n);
-    std::cout << "Enter " << n << " integers:" << std::endl;
+    vector<int> arr(n);
+    cout << "Enter " << n << " integers:" << endl;
     for (int i = 0; i < n; ++i) {
-        std::cin >> arr[i];
+        cin >> arr[i];
     }
 
-    std::cout << "Original Array: ";
+    cout << "Original Array: ";
     for (int x : arr) {
-        std::cout << x << " ";
+        cout << x << " ";
     }
-    std::cout << std::endl;
+    cout << endl;
 
     std::pair<int, int> result = findMinMax(arr);
 
     // Check if the returned values indicate an error (e.g., empty array)
     if (result.first == std::numeric_limits<int>::max() && result.second == std::numeric_limits<int>::min()) {
         // This means the function encountered an empty array and returned the sentinel values.
-        std::cout << "Could not determine min/max due to empty array." << std::endl;
+        cout << "Could not determine min/max due to empty array." << endl;
     } else {
-        std::cout << "Minimum element: " << result.first << std::endl;
-        std::cout << "Maximum element: " << result.second << std::endl;
+        cout << "Minimum element: " << result.first << endl;
+        cout << "Maximum element: " << result.second << endl;
     }
 
     return 0;

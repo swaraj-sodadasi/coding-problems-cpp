@@ -3,7 +3,9 @@
 #include <algorithm> // For std::sort, std::min, std::max
 #include <limits>    // For std::numeric_limits
 
-int minimizeMaxDifference(std::vector<int>& arr, int k) {
+using namespace std;
+
+int minimizeMaxDifference(vector<int>& arr, int k) {
     int n = arr.size();
     if (n <= 1) {
         return 0; // If 0 or 1 element, difference is 0
@@ -44,33 +46,33 @@ int minimizeMaxDifference(std::vector<int>& arr, int k) {
 
 int main() {
     int n;
-    std::cout << "Enter the number of elements in the array: ";
-    std::cin >> n;
+    cout << "Enter the number of elements in the array: ";
+    cin >> n;
 
     if (n <= 0) {
-        std::cout << "Array must contain at least one element." << std::endl;
+        cout << "Array must contain at least one element." << endl;
         return 0;
     }
 
-    std::vector<int> arr(n);
-    std::cout << "Enter " << n << " integers:" << std::endl;
+    vector<int> arr(n);
+    cout << "Enter " << n << " integers:" << endl;
     for (int i = 0; i < n; ++i) {
-        std::cin >> arr[i];
+        cin >> arr[i];
     }
 
     int k;
-    std::cout << "Enter the value of K: ";
-    std::cin >> k;
+    cout << "Enter the value of K: ";
+    cin >> k;
 
-    std::cout << "Original Array: ";
+    cout << "Original Array: ";
     for (int x : arr) {
-        std::cout << x << " ";
+        cout << x << " ";
     }
-    std::cout << std::endl;
+    cout << endl;
 
     int result_diff = minimizeMaxDifference(arr, k);
 
-    std::cout << "Minimum possible difference: " << result_diff << std::endl;
+    cout << "Minimum possible difference: " << result_diff << endl;
 
     return 0;
 }

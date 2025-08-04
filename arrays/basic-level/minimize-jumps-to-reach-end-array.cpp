@@ -2,6 +2,8 @@
 #include <vector>
 #include <algorithm> // For std::max
 
+using namespace std;
+
 int minJumps(const std::vector<int>& nums) {
     int n = nums.size();
 
@@ -44,29 +46,29 @@ int minJumps(const std::vector<int>& nums) {
 
 int main() {
     int n;
-    std::cout << "Enter the number of elements in the array: ";
-    std::cin >> n;
+    cout << "Enter the number of elements in the array: ";
+    cin >> n;
 
     if (n <= 0) {
-        std::cout << "Array must contain at least one element for jumps." << std::endl;
+        cout << "Array must contain at least one element for jumps." << endl;
         return 0;
     }
 
-    std::vector<int> arr(n);
-    std::cout << "Enter " << n << " non-negative integers:" << std::endl;
+    vector<int> arr(n);
+    cout << "Enter " << n << " non-negative integers:" << endl;
     for (int i = 0; i < n; ++i) {
-        std::cin >> arr[i];
+        cin >> arr[i];
     }
 
-    std::cout << "Original Array: ";
+    cout << "Original Array: ";
     for (int x : arr) {
-        std::cout << x << " ";
+        cout << x << " ";
     }
-    std::cout << std::endl;
+    cout << endl;
 
     int min_jumps = minJumps(arr);
 
-    std::cout << "Minimum jumps to reach the end: " << min_jumps << std::endl;
+    cout << "Minimum jumps to reach the end: " << min_jumps << endl;
 
     return 0;
 }
